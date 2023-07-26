@@ -29,13 +29,9 @@ def enter_move(board, bot = 0):
     else:
         count = 1
         while True :
-            if(count==2):
-                if(1,1) in make_list_of_free_fields(board):
-                    board[1][1] = 'X'
-                    break
-                else:
-                    count +=1
-                    continue
+            if(count>2):
+                row = random.randint(1,10) 
+                col = random.randint(1,10)
             else:    
                 row = random.choice([0, 2]) 
                 col = random.choice([0, 2])
@@ -98,11 +94,11 @@ def main():
     while(True):        
         display_board(board)
         res = match_state(board)
-        if(res == 1 or res == -1):break   fs
+        if(res == 1 or res == -1):break   
         enter_move(board, 0) 
         display_board(board) 
         res = match_state(board)
         if(res == 1 or res == -1):break  
         enter_move(board, 1)
-main()    
+main()
 input()
