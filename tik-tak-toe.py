@@ -92,13 +92,13 @@ def main():
             board[i][j] = count
             count +=1
     print("Who will start?:")
-    inp = input('Print YES to start first: ') 
+    inp = input('Print YES to start first or anything else if you want bot to start: ') 
     if(inp != 'YES'):
         enter_move(board, 1)
     while(True):        
         display_board(board)
         res = match_state(board)
-        if(res == 1 or res == -1):break   
+        if(res == 1 or res == -1):break   fs
         enter_move(board, 0) 
         display_board(board) 
         res = match_state(board)
